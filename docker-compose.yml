@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    container_name: gestao_escolar_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    # O banco de dados SQLite (escola.db) será criado no diretório local
+    # graças ao volume mount acima, garantindo a persistência dos dados
+    # entre as execuções do contêiner.
